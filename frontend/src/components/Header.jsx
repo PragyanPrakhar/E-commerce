@@ -1,5 +1,6 @@
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { FaShoppingCart, FaUser } from "react-icons/fa";
+import { LinkContainer } from "react-router-bootstrap";
 import logo from "../assets/logo.png";
 const Header = () => {
     return (
@@ -11,21 +12,27 @@ const Header = () => {
 
                 <Container>
                     {/*  A Bootstrap component that provides a responsive fixed-width container */}
-                    <Navbar.Brand href="/">
-                        <img src={logo} alt="E-commerce" />
-                        E-Commerce
-                    </Navbar.Brand>
+                    <LinkContainer to="/">
+                        <Navbar.Brand>
+                            <img src={logo} alt="E-commerce" />
+                            E-Commerce
+                        </Navbar.Brand>
+                    </LinkContainer>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ms-auto">
-                            <Nav.Link href="/cart">
+                            <LinkContainer to="/cart">
+                            <Nav.Link>
                                 <FaShoppingCart />
                                 Cart
                             </Nav.Link>
-                            <Nav.Link href="/login">
+                            </LinkContainer>
+                            <LinkContainer to="/login">
+                            <Nav.Link>
                                 <FaUser />
                                 Sign In
                             </Nav.Link>
+                            </LinkContainer>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
