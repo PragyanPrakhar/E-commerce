@@ -1,8 +1,6 @@
 import express from "express";
 const router = express.Router();
-import asyncHandler from "../middleware/asyncHandler.js";
 import {getProducts,getProductById} from "../controllers/productController.js";
-import { get } from "mongoose";
 
 router.route('/').get(getProducts);
 router.route('/:id').get(getProductById);
